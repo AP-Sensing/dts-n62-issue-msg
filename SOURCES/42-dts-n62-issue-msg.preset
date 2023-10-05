@@ -1,0 +1,4 @@
+# Definition: https://www.freedesktop.org/software/systemd/man/systemd.preset.html
+
+enable dts-n62-issue-msg.service
+enable dts-n62-issue-msg.timer

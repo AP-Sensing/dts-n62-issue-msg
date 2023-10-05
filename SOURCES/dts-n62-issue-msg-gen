@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+dts-n62-issue-msg > /etc/issue.d/dts-n62.issue

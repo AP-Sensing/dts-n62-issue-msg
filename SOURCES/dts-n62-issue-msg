@@ -1,0 +1,18 @@
+#!/bin/sh
+
+SETCOLOR_SUCCESS="echo -en \\033[1;32m"
+SETCOLOR_FAILURE="echo -en \\033[1;31m"
+SETCOLOR_WARNING="echo -en \\033[1;33m"
+SETCOLOR_NORMAL="echo -en \\033[0;39m"
+
+${SETCOLOR_FAILURE}
+echo "APSensing N62 DTS"
+${SETCOLOR_NORMAL}
+systemctl status sshd.service | grep sshd.service
+${SETCOLOR_WARNING}
+echo "Local IPs are"
+${SETCOLOR_NORMAL}
+ip address | grep -E "inet6?" | awk '{print $NF":\n"$2}' | grep --invert-match "noprefixroute"
+${SETCOLOR_SUCCESS}
+echo "Use dts_admin/password to login"
+${SETCOLOR_NORMAL}

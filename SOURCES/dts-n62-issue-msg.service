@@ -1,0 +1,14 @@
+# Docs https://www.redhat.com/sysadmin/systemd-oneshot-service
+
+[Unit]
+Description=A simple oneshot service that executes the dts-n62-issue-msg-gen script
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/dts-n62-issue-msg-gen
+RemainAfterExit=yes
+User=root
+Group=root
+
+[Install]
+WantedBy=network.target
