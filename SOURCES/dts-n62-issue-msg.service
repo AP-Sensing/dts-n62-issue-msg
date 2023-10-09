@@ -2,6 +2,8 @@
 
 [Unit]
 Description=A simple oneshot service that executes the dts-n62-issue-msg-gen script
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 Type=oneshot
@@ -11,4 +13,4 @@ User=root
 Group=root
 
 [Install]
-WantedBy=network.target
+WantedBy=multi-user.target

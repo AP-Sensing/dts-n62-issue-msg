@@ -1,7 +1,7 @@
 BuildArch:      noarch
 Name:           dts-n62-issue-msg
-Version:        1.0.0
-Release:        2
+Version:        1.1.0
+Release:        1
 License:        GPLv3
 Group:          Unspecified
 Summary:        A systemd service that regenerates the DTS N62 issue message every 5 minutes
@@ -62,5 +62,8 @@ install -m 644 %{_sourcedir}/42-dts-n62-issue-msg.preset $RPM_BUILD_ROOT/usr/lib
 %ghost /etc/issue.d/dts-n62.issue
 
 %changelog
+* Mon Oct 09 2023 Fabian Sauter <fabian.sauter+rpm@apsensing.com> - 1.1.0-1
+- Run the service after the network is online
+
 * Thu Oct 05 2023 Fabian Sauter <fabian.sauter+rpm@apsensing.com> - 1.0.0-1
 - Initial release
