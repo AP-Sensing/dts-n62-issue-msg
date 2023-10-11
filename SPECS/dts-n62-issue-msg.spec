@@ -1,6 +1,6 @@
 BuildArch:      noarch
 Name:           dts-n62-issue-msg
-Version:        1.1.0
+Version:        1.2.0
 Release:        1
 License:        GPLv3
 Group:          Unspecified
@@ -62,6 +62,9 @@ install -m 644 %{_sourcedir}/42-dts-n62-issue-msg.preset $RPM_BUILD_ROOT/usr/lib
 %ghost /etc/issue.d/dts-n62.issue
 
 %changelog
+* Wed Oct 11 2023 Fabian Sauter <fabian.sauter+rpm@apsensing.com> - 1.2.0-1
+- Make sure we run the service before the tty appears
+
 * Mon Oct 09 2023 Fabian Sauter <fabian.sauter+rpm@apsensing.com> - 1.1.0-1
 - Run the service after the network is online
 
